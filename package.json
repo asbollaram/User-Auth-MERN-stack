@@ -1,0 +1,35 @@
+{
+  "name": "user-auth-mern-stack",
+  "version": "1.0.0",
+  "description": "user",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asbollaram/User-Auth-MERN-stack.git"
+  },
+  "keywords": [
+    "mern",
+    "stack"
+  ],
+  "author": "bollaram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asbollaram/User-Auth-MERN-stack/issues"
+  },
+  "homepage": "https://github.com/asbollaram/User-Auth-MERN-stack#readme",
+  "dependencies": {
+    "cores": "^0.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
