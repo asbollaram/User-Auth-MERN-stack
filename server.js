@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const RegisterjwtUser = require("./jwtmodel");
 const jwt = require("jsonwebtoken");
+const middleware = require("./middleware");
 
 const app = express();
 
@@ -76,6 +77,20 @@ app.post('/login', async(req, res) =>{
     }
 })
 
+// my profile router and protect router
+app.get('/myprofile', middleware,async(req, res) =>{
+    try{
+        let exist = await RegisterjwtUser.findById(req.user.id);
+        if(!exist){
+            return res.status(400).send('user not found');
+        }
+        res.json(exist);
+
+    }catch(err){
+        console.log(err);
+        return res.status(500).send('server error')
+    }
+})
 
 app.get("/", (req, res) =>{
  res.send("<h2>Hello, welcome to JWT user!</h2>");
