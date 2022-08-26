@@ -12,6 +12,6 @@ try{
 
 }catch(err){
     console.log(err);
-    return res.status(500).send('server error')
+    return res.status(500).send('Invalid Token...')
 }
 }

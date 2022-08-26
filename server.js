@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const RegisterjwtUser = require("./jwtmodel");
 const jwt = require("jsonwebtoken");
 const middleware = require("./middleware");
+
 
 const app = express();
 
@@ -11,6 +13,8 @@ mongoose.connect('mongodb+srv://Jwtmernauth501:welcome1@cluster0.17hwg.mongodb.n
 )
 
 app.use(express.json());
+
+app.use(cors({origin:'*'}))
 
 // register and data post ruter
 app.post("/register", async(req, res) =>{
@@ -92,6 +96,7 @@ app.get('/myprofile', middleware,async(req, res) =>{
     }
 })
 
+//
 app.get("/", (req, res) =>{
  res.send("<h2>Hello, welcome to JWT user!</h2>");
 })
