@@ -1,7 +1,12 @@
-import React,{useState} from 'react';
+import React,{ useState,useContext } from 'react';
 import axios from 'axios';
+import { store } from './App';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const [token,setToken] = useContext(store)
+  
     const [data, setData] = useState({
         email:'',
         password:''
@@ -19,21 +24,24 @@ const submitHandler = e =>{
     e.preventDefault();
     // adding axios server method topost data from frontEnd
 
-    axios.post('http://localhost:5003/register',data).then(
-     res => alert(res.data)
+    axios.post('http://localhost:5003/login',data).then(
+     res => setToken(res.data.token)
     )
+}
+if(token){
+  return <Navigate to="/Myprofile" />
 }
   return (
     <div>
     <center>
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} autoComplete="off">
     <h2>Login</h2>
     
-    <input type="email" name="email" placeholder='Email' onChange={changeHandler} />
+    <input type="email" name="email" placeholder='Email'  onChange={changeHandler} />
     <br />
     <input type="password" name="password" placeholder='Password' onChange={changeHandler} />
     <br/>
-    <button type='submit'>Register</button>
+    <button type='submit'>Login</button>
 
     
     </form>

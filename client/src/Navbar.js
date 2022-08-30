@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div>
         <ul>
-            <Link to='/Register'>Register</Link>
-            <Link to='/Login'>Login</Link>
+            <Link to='/register'>Register</Link>
+            <Link to='/login'>Login</Link>
         </ul>
     </div>
   )
