@@ -33,20 +33,25 @@ if(token){
 }
   return (
     <div>
-    <center>
-    <form onSubmit={submitHandler} autoComplete="off">
-    <h2>Login</h2>
+    <main className='form-signin m-auto '>
+    <h2 className='text-center'>Login</h2>
+    <form onSubmit={submitHandler} autoComplete="off" className='bg-white shadow p-3 border rounded-4 w-100'>
     
-    <input type="email" name="email" placeholder='Email'  onChange={changeHandler} />
-    <br />
-    <input type="password" name="password" placeholder='Password' onChange={changeHandler} />
-    <br/>
-    <button type='submit'>Login</button>
+    <div className='mb-3'>
+      <label className='form-label fs-4'>Email</label>
+      <input className='form-control form-control-lg shadow-sm' type="email" name="email" placeholder='Email'  onChange={changeHandler} />
+    </div>
+    <div className='mb-3'>
+    <label className='form-label fs-4'>Password</label>
+      <input className='form-control form-control-lg shadow-sm' type="password" name="password" placeholder='Password' onChange={changeHandler} />
+    </div>
+    <button type='submit' className='btn btn-primary btn-primary-lg shadow-sm fs-5'>Login</button>
 
     
     </form>
-    
-    </center></div>
+    <p className="mt-5 mb-3 text-muted text-center">©2022 Bollaram Studio</p>
+    </main>
+    </div>
   )
 }
 
