@@ -2,6 +2,7 @@ import React,{useState, createContext} from 'react';
 import { Routes,Route } from 'react-router-dom';
 import Login from './Login';
 import Myprofile from './Myprofile';
+import Home from './Home';
 import Navbar from './Navbar';
 import Register from './Register';
 
@@ -14,6 +15,7 @@ const App = () => {
     <store.Provider value={[token,setToken]}>
       <Navbar/>
         <Routes>
+          <Route path='/Home' element={<Home/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/myProfile' element={<Myprofile/>} />        

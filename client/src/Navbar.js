@@ -5,7 +5,8 @@ const Navbar = () => {
   return (
     <div>    
         <div className='bg-light p-2'>
-            <ul className='nav justify-content-end nav-pills'>
+            <ul className='nav justify-content-center nav-pills'>
+                <NavLink className='nav-link' to='/Home'>Home</NavLink>
                 <NavLink className='nav-link' to='/register'>Register</NavLink>
                 <NavLink className='nav-link' to='/login'>Login</NavLink>
             </ul>
