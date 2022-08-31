@@ -23,8 +23,25 @@ const Myprofile = () => {
     <div> 
           { data &&   
             <div className='container-fluid bg-white m-auto h-100'>
+
             <div className='row'>
-              <h2 className='display-3'>Welcome to user : {data.username}</h2>
+
+              <header className='p-3 text-bg-dark'>
+              
+                <div className='d-flex flex-wrap align-items-center  justify-content-md-between' >
+                  
+                <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              B
+            </a>
+            <div className='text-end d-flex'>
+                <ul className='nav'> 
+                    <li className='nav-item mx-3 align-self-center'>Welcome to user : {data.username}</li>                
+                  </ul>    
+                <button type='button' className='btn btn-danger btn-sm' onClick={()=> setToken(null)}>Logout</button>
+                </div> 
+                </div>
+              </header>
+
               <section className="py-5 text-center container">
               <div className="row py-lg-5">
                 <div className="col-lg-6 col-md-8 mx-auto">
